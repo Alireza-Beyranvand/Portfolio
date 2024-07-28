@@ -1,0 +1,29 @@
+/*vazir fonts*/
+@font-face {
+    font-family: "Vazir";
+    src: url(../fonts/Vazir.ttf);
+}
+
+/*roboto fonts*/
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+
+/*tanha fonts*/
+@font-face {
+    font-family: "Tanha";
+    src: url("../fonts/Tanha.eot") format("eot"),
+        url("../fonts/Tanha.ttf") format("ttf"),
+        url("../fonts/Tanha.woff") format("woff"),
+        url("../fonts/Tanha.woff2") format("woff2"),
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
