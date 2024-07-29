@@ -39,7 +39,7 @@ const About = () => {
         <Box sx={{ color: "whitesmoke" }}>
             <HelmetOption title={"درباره من"} />
             <Grid container>
-                <SlideOption dir="down" start={loading} delay="700">
+                <SlideOption dir="down" start={loading} delay="200">
                     <Grid xs={12} sm={12} md={8} lg={8} xl={8} sx={{ mt: 2, p: 1 }}>
                         <Divider variant="fullWidth" sx={{
                             px: 1,
@@ -86,7 +86,7 @@ const About = () => {
                     </Grid>
                 </SlideOption>
 
-                <SlideOption dir="down" start={loading} delay="700">
+                <SlideOption dir="down" start={loading} delay="500">
                     <Grid xs={12} sm={12} md={4} lg={4} xl={4} sx={{ mt: 3 }}>
                         <Tooltip title="برات نمرا بیرنون 😎😁" placement="right" arrow >
                             <Avatar src={Bg} variant="rounded" sx={{
@@ -135,7 +135,7 @@ const About = () => {
             </Grid>
 
             <Grid item sx={{ mt: 4 }}>
-                <SlideOption dir="right" start={loading} delay="700">
+                <SlideOption dir="right" start={loading} delay="800">
                     <Divider variant="middle" sx={{
                         "&::before,&::after": {
                             borderColor: "info.main"
@@ -151,7 +151,7 @@ const About = () => {
                 </SlideOption>
             </Grid>
 
-            <SlideOption dir="up" start={loading} dealy="700">
+            <SlideOption dir="up" start={loading} dealy="900">
                 <Grid container sx={{
                     display: "flex",
                     justifyContent: "space-evenly", mt: 6,

@@ -28,7 +28,7 @@ const TimeLineResume = ({ option, time, school, index, icon, company , delay}) =
 
     return (
 
-        <SlideOption dir="down" start={loading} delay={`${index + 1}${delay}`}>
+        <SlideOption dir="up" start={loading} delay={`${index + 1}${delay}`}>
             <Timeline position="alternate">
                 <TimelineItem>
                     <TimelineOppositeContent

@@ -23,7 +23,9 @@ const SideBarHeader = () => {
                         xl: "block"
                     }
                 }}
-            />
+            >
+                AS
+            </Avatar>
             <Typography variant="h5" color="whitesmoke" sx={{ mt: 1 }}>
                 <RandomReveal isPlaying duration={4} characterSet={alphaberPersian} characters={"علیرضا سپه وند"} />
             </Typography>

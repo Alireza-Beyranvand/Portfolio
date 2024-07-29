@@ -1,5 +1,17 @@
-import { Coffee, CheckCircle, HourglassEmpty, SchoolOutlined, SchoolRounded, Description } from "@mui/icons-material";
+import {
+    Coffee,
+    CheckCircle,
+    HourglassEmpty,
+    SchoolRounded,
+    Description
+} from "@mui/icons-material";
 
+// image for (document)
+import ICDL from "../assets/documentImage/39640191.jpg";
+import Fixing from "../assets/documentImage/39640192.jpg";
+
+
+// work info
 
 export const devWorkInfo = [
     {
@@ -22,6 +34,8 @@ export const devWorkInfo = [
 ];
 
 
+//education
+
 export const devEdu = [
     {
         Evidence: "ریاضی و فیزیک",
@@ -38,6 +52,8 @@ export const devEdu = [
 ];
 
 
+// experiences
+
 export const devExperiences = [
     {
         responsibility: "مسئول بخش کامپیوتر",
@@ -51,4 +67,25 @@ export const devExperiences = [
         period: "اکنون",
         icon: <Description />,
     },
-]
+];
+
+
+// document
+
+export const devDocuments = [
+    {
+        DocumentName: "مدرک ICDL",
+        level: "درجه 1",
+        image: ICDL
+    },
+    {
+        DocumentName: "مدرک تعمیرات کامپیوتر",
+        level: "درجه 2" ,
+        image: Fixing
+    },
+    {
+        DocumentName: "تکنسین لوازم برقی",
+        level: "درجه 1",
+        image: Fixing
+    },
+];

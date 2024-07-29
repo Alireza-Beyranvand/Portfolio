@@ -5,9 +5,7 @@ import SlideOption from "../helpers/SlideOption";
 const TabPanel = (props) => {
     const { children, Numberpages, index, ...others } = props;
 
-
     const [loading, setLoading] = useState(false);
-
 
     useEffect(() => {
         setLoading(true);
