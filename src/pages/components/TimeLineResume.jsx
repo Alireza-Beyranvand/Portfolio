@@ -1,12 +1,21 @@
-import { Timeline, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineOppositeContent, TimelineContent } from "@mui/lab"
-import { Typography, Slide } from "@mui/material";
-
+import {
+    Timeline,
+    TimelineItem,
+    TimelineSeparator,
+    TimelineDot,
+    TimelineConnector,
+    TimelineOppositeContent,
+    TimelineContent
+} from "@mui/lab";
+import { Typography } from "@mui/material";
 import { useState, useEffect } from "react";
-
-const TimeLineResume = ({ option, time, school, index, icon, company }) => {
-
+import SlideOption from "../../helpers/SlideOption";
 
 
+
+const TimeLineResume = ({ option, time, school, index, icon, company , delay}) => {
+
+    // for slideOption
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -17,13 +26,9 @@ const TimeLineResume = ({ option, time, school, index, icon, company }) => {
     }, [])
 
 
-
     return (
 
-
-        <Slide direction="down" in={loading} style={{
-            transitionDelay: loading ? `${index + 1}100ms` : "0ms"
-        }}>
+        <SlideOption dir="down" start={loading} delay={`${index + 1}${delay}`}>
             <Timeline position="alternate">
                 <TimelineItem>
                     <TimelineOppositeContent
@@ -49,11 +54,7 @@ const TimeLineResume = ({ option, time, school, index, icon, company }) => {
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>
-
-
-        </Slide>
-
-
+        </SlideOption>
     )
 };
 

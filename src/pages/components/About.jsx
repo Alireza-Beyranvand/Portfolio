@@ -1,14 +1,19 @@
-import { Box, Typography, Avatar, Chip, Divider, Tooltip, Slide } from "@mui/material";
+import { useEffect, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import Bg from "../../assets/Screenshot_۲۰۲۴۰۳۰۱_۲۳۵۳۵۳_Gallery.jpg";
+import { Box, Typography, Avatar, Chip, Divider, Tooltip } from "@mui/material";
 import { CodeRounded, ManageAccountsRounded, SettingsSuggestRounded } from "@mui/icons-material";
+
+import CountUp from "react-countup";
 import DevInfo from "./DevInfo";
 import Skills from "../../components/Skills";
+
 import { devSkillsLanguage, devSkillsframework } from "../../constants/skill";
 import { devWorkInfo } from "../../constants/details";
-import CountUp from "react-countup";
 import HelmetOption from "../../helpers/HelmetOption";
-import { useEffect, useState } from "react";
+import SlideOption from "../../helpers/SlideOption";
+
+import Bg from "../../assets/Screenshot_۲۰۲۴۰۳۰۱_۲۳۵۳۵۳_Gallery.jpg";
+
 
 
 const About = () => {
@@ -18,10 +23,10 @@ const About = () => {
     const devLanguageLoop = Object.values(devSkillsLanguage);
     const devframeworkLoop = Object.values(devSkillsframework);
 
-
+    // for transition (slide)
     const [loading, setLoading] = useState(false);
 
-
+    // mount & UnMount component
     useEffect(() => {
         setLoading(true);
         return () => {
@@ -34,11 +39,8 @@ const About = () => {
         <Box sx={{ color: "whitesmoke" }}>
             <HelmetOption title={"درباره من"} />
             <Grid container>
-                <Slide direction="down" in={loading} style={{
-                    transitionDelay: loading ? "400ms" : "0ms"
-                }}>
+                <SlideOption dir="down" start={loading} delay="700">
                     <Grid xs={12} sm={12} md={8} lg={8} xl={8} sx={{ mt: 2, p: 1 }}>
-
                         <Divider variant="fullWidth" sx={{
                             px: 1,
                             "&::before , &::after":
@@ -52,8 +54,6 @@ const About = () => {
                                 color="secondary" icon={<CodeRounded />} sx={{ p: 3 }}
                             />
                         </Divider>
-
-
                         <Box sx={{
                             mt: 1.5, p: 3, display: "flex", justifyContent: {
                                 xs: "center",
@@ -61,6 +61,7 @@ const About = () => {
                                 md: "start"
                             }
                         }}>
+                            {/*info developer in about component*/}
                             <DevInfo />
                             <Grid xs={5} sm={5} md={5} lg={4} xl={4} sx={{
                                 margin: "0 auto ", p: 2,
@@ -83,11 +84,9 @@ const About = () => {
                             </Grid>
                         </Box>
                     </Grid>
-                </Slide>
+                </SlideOption>
 
-                <Slide direction="down" in={loading} style={{
-                    transitionDelay: loading ? "500ms" : "0ms"
-                }}>
+                <SlideOption dir="down" start={loading} delay="700">
                     <Grid xs={12} sm={12} md={4} lg={4} xl={4} sx={{ mt: 3 }}>
                         <Tooltip title="برات نمرا بیرنون 😎😁" placement="right" arrow >
                             <Avatar src={Bg} variant="rounded" sx={{
@@ -104,12 +103,11 @@ const About = () => {
                             </Avatar>
                         </Tooltip>
                     </Grid>
-                </Slide>
+                </SlideOption>
+
             </Grid >
             <Grid sx={{ mt: 2 }}>
-                <Slide direction="up" in={loading} style={{
-                    transitionDelay: loading ? "400ms" : "0ms"
-                }}>
+                <SlideOption dir="up" start={loading} delay="700">
                     <Divider variant="middle"
                         sx={{
                             "&::before,&::after": {
@@ -122,7 +120,7 @@ const About = () => {
                             </Typography>
                         } icon={<ManageAccountsRounded />} sx={{ p: 3 }} />
                     </Divider>
-                </Slide>
+                </SlideOption>
             </Grid>
             <Grid container sx={{
                 display: "flex",
@@ -137,9 +135,7 @@ const About = () => {
             </Grid>
 
             <Grid item sx={{ mt: 4 }}>
-                <Slide direction="right" in={loading} style={{
-                    transitionDelay: loading ? "800ms" : "0ms"
-                }}>
+                <SlideOption dir="right" start={loading} delay="700">
                     <Divider variant="middle" sx={{
                         "&::before,&::after": {
                             borderColor: "info.main"
@@ -152,12 +148,10 @@ const About = () => {
                         } sx={{ p: 3 }}
                             icon={<SettingsSuggestRounded />} />
                     </Divider>
-                </Slide>
+                </SlideOption>
             </Grid>
 
-            <Slide direction="up" in={loading} style={{
-                transitionDelay: loading ? "600ms" : "0ms"
-            }}>
+            <SlideOption dir="up" start={loading} dealy="700">
                 <Grid container sx={{
                     display: "flex",
                     justifyContent: "space-evenly", mt: 6,
@@ -169,7 +163,7 @@ const About = () => {
                             name={df.name} />
                     ))}
                 </Grid>
-            </Slide>
+            </SlideOption>
         </Box >
     )
 };

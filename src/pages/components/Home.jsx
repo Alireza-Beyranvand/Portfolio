@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { Helmet } from "react-helmet";
 import { Avatar, Box, Typography } from "@mui/material";
-import bg3 from "../../assets/1.jpg"
-import bg from "../../assets/wallhaven-zmjd7o-min.jpg";
-import bg2 from "../../assets/Screenshot_۲۰۲۴۰۳۰۱_۲۳۵۳۵۳_Gallery.jpg";
 import Typed from "typed.js";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TextTransition, { presets } from "react-text-transition";
-import "../../constants/style.css"
 import HelmetOption from "../../helpers/HelmetOption";
+import "../../constants/style.css"
+import bg3 from "../../assets/1.jpg"
+import bg from "../../assets/wallhaven-zmjd7o-min.jpg";
+import bg2 from "../../assets/Screenshot_۲۰۲۴۰۳۰۱_۲۳۵۳۵۳_Gallery.jpg";
 
 
 const Home = () => {

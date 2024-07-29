@@ -23,7 +23,7 @@ const Skills = ({ icon, value, color, name }) => {
             ref={ref}
             initial={{ opacity: 0, y: 50, scale: 0.2 }}
             animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ duration: .5, delay: .2 }}
+            transition={{ duration: .5, delay: .4 }}
         >
             <Tooltip title={name} placement="bottom" arrow>
                 <Box sx={{

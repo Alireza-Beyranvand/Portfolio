@@ -1,8 +1,6 @@
-import { Box, Slide } from "@mui/material"
-
-import { motion } from "framer-motion";
+import { Box } from "@mui/material"
 import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import SlideOption from "../helpers/SlideOption";
 
 const TabPanel = (props) => {
     const { children, Numberpages, index, ...others } = props;
@@ -18,7 +16,6 @@ const TabPanel = (props) => {
         }
     }, [])
 
-
     return (
         <div
             role="tabpanel"
@@ -31,20 +28,16 @@ const TabPanel = (props) => {
                 Numberpages === index && (
                     <>
                         {/* animations slider */}
-                        <Slide direction="down" in={loading} style={{
-                            transitionDelay: loading ? "500ms" : "0ms"
-                        }}>
+                        <SlideOption start={loading} dir={"down"} delay={"400"}>
                             <Box sx={{ overflow: "hidden" }}>
                                 {children}
                             </Box>
-
-                        </Slide>
+                        </SlideOption>
 
                     </>
                 )
             }
         </div >
-
     )
 };
 
