@@ -8,7 +8,7 @@ import MainLayout from '../layout/MainLayout';
 import MainContext from "../context/index";
 import { DrawerActionButton } from "../components/Drawer";
 import { Home, About, Resume } from "../pages/index";
-
+import WorkSamples from "../pages/components/WorkSamples";
 
 const AppContainer = () => {
 
@@ -56,13 +56,11 @@ const AppContainer = () => {
               <Resume />
             </Pages>
             <Pages Numberpages={Numberpages} index={3}>
-              <Typography variant="h5" sx={{ textAlign: "center" }}>
-                نظرات
-              </Typography>
+              <WorkSamples/>
             </Pages>
             <Pages Numberpages={Numberpages} index={4}>
               <Typography variant="h5" sx={{ textAlign: "center" }}>
-                نمونه کار ها
+                نظرات
               </Typography>
             </Pages>
             <Pages Numberpages={Numberpages} index={5}>

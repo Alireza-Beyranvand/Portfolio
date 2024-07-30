@@ -22,8 +22,7 @@ const SideBarHeader = () => {
                         md: "block",
                         xl: "block"
                     }
-                }}
-            >
+                }}>
                 AS
             </Avatar>
             <Typography variant="h5" color="whitesmoke" sx={{ mt: 1 }}>
