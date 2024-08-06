@@ -3,8 +3,12 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import AppContainer from './containers/AppContainer';
 
-const root = createRoot(document.getElementById('root'));
+// react slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+
+const root = createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
     <AppContainer />

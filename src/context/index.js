@@ -5,5 +5,9 @@ export default createContext({
     Numberpages: 0,
     handlePageNumber: () => { },
     drawerOpen: false,
-    setDrawerOpen: () => { }
+    setDrawerOpen: () => { },
+    handleThemeMode: () => { },
+    statusMode: "",
+    loading: false,
+    handleLoading: () => { },
 });

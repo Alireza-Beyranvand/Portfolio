@@ -13,7 +13,7 @@ import SlideOption from "../../helpers/SlideOption";
 
 
 
-const TimeLineResume = ({ option, time, school, index, icon, company , delay}) => {
+const TimeLineResume = ({ option, time, school, index, icon, company, delay }) => {
 
     // for slideOption
     const [loading, setLoading] = useState(false);
@@ -28,27 +28,27 @@ const TimeLineResume = ({ option, time, school, index, icon, company , delay}) =
 
     return (
 
-        <SlideOption dir="up" start={loading} delay={`${index + 1}${delay}`}>
-            <Timeline position="alternate">
+        <SlideOption dir="up" start={loading} delay={`${index + 3}${delay}`}>
+            <Timeline position="alternate" color="text.primary">
                 <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ mt: 2 }}
                         align="right"
                         variant="body2"
-                        color="text.secondary">
+                        color="text.primary">
                         {time}
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineDot variant="outlined" sx={{ color: "whitesmoke" }}>
+                    <TimelineSeparator >
+                        <TimelineDot variant="outlined" sx={{ color: "text.primary" }} >
                             {icon}
                         </TimelineDot>
                         {index === 0 ? <TimelineConnector sx={{ height: "5rem", mt: 2.5 }} /> : null}
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: "12px", px: 2 }}>
-                        <Typography variant="body1" color="whitesmoke">
+                        <Typography variant="body1" color="text.primary">
                             {option}
                         </Typography>
-                        <Typography color="whitesmoke" variant="caption">
+                        <Typography variant="caption" color="text.primary">
                             {school || company}
                         </Typography>
                     </TimelineContent>

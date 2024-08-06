@@ -27,7 +27,7 @@ const TabPanel = (props) => {
                     <>
                         {/* animations slider */}
                         <SlideOption start={loading} dir={"down"} delay={"400"}>
-                            <Box sx={{ overflow: "hidden" }}>
+                            <Box sx={{ overflow: "hidden"}}>
                                 {children}
                             </Box>
                         </SlideOption>

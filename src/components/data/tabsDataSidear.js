@@ -15,7 +15,6 @@ export const tabs = () => {
         { label: "درباره من", icon: <PermIdentityOutlined /> },
         { label: "رزومه من", icon: <StickyNote2Outlined /> },
         { label: "نمونه کار ها", icon: <CodeOutlined /> },
-        { label: "نظرات", icon: <MessageOutlined /> },
         { label: "ارتباط با من", icon: <ContactSupportOutlined /> },
     ];
 

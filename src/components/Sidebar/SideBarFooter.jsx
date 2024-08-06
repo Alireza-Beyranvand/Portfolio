@@ -16,14 +16,14 @@ const SideBarFooter = () => {
             justifyContent: 'center',
             mt: 3
         }}>
-            <Typography variant="subtitle2" color="whitesmoke" sx={{ mt: 2 }}>
+            <Typography variant="subtitle2" color="text.primary" sx={{ mt: 2 }}>
                 ساخته شده توسط علیرضا
                 <CreateOutlined sx={{
                     verticalAlign: "middle",
                     height: 20
                 }} />
             </Typography>
-            <Typography variant="caption" color="whitesmoke" sx={{ mt: 1 }}>
+            <Typography variant="caption" color="text.primary" sx={{ mt: 1 }}>
                 کپی رایت 1403
                 <CopyrightOutlined sx={{
                     verticalAlign: "middle",

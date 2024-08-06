@@ -15,7 +15,7 @@ const DevInfo = () => {
 
 
     return (
-        <Typography variant="body1" textAlign="left">
+        <Typography variant="body1" textAlign="left" color="text.primary">
             {Info && Info.map((inf, index) => <Box key={index} sx={{ mt: 2.5 }}>
                 <KeyboardArrowLeftRounded
                     sx={{ verticalAlign: "middle" , }} color="primary" />

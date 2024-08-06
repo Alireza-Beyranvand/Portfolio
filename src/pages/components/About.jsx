@@ -76,7 +76,7 @@ const About = () => {
                                 {devWorkInfo && devWorkInfo.map((DI, index) => (
                                     <Tooltip title={DI.description} placement="right" arrow>
                                         <Chip key={index} icon={DI.icon} label={<Typography component="div"
-                                            sx={{ mt: .6 }}>
+                                            sx={{ mt: .6 }} color="text.primary" >
                                             <CountUp start={0} end={DI.total} duration={8} />
                                         </Typography>} sx={{ p: 2, width: 1, mt: 2 }} />
                                     </Tooltip>

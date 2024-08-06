@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import MainContext from "../../context/index";
 import { Avatar, Box, Typography } from "@mui/material";
 import Typed from "typed.js";
 import { motion } from "framer-motion";
@@ -10,12 +11,15 @@ import bg3 from "../../assets/1.jpg"
 import bg from "../../assets/wallhaven-zmjd7o-min.jpg";
 import bg2 from "../../assets/Screenshot_۲۰۲۴۰۳۰۱_۲۳۵۳۵۳_Gallery.jpg";
 
+import LightImage from "../../assets/3132.jpg"
 
 const Home = () => {
 
 
-    // for text-transition
+    const { statusMode } = useContext(MainContext)
 
+
+    // for text-transition
     const [index, setIndex] = useState(0);
 
 
@@ -43,7 +47,7 @@ const Home = () => {
 
         const AnimationName = new Typed(NameAn.current, {
             strings: ["علیرضا سپه وند"],
-            startDelay: 3200,
+            startDelay: 2000,
             typeSpeed: 90,
             showCursor: false,
         })
@@ -60,16 +64,21 @@ const Home = () => {
     }, [])
 
 
+    // theme mode status
+    
+    const color = {
+        xs: "whitesmoke",
+        md: "text.primary"
+    }
+
+
     return (
         <>
             <HelmetOption />
             <Box sx={{
                 backgroundImage: {
                     xs: `url(${bg})`,
-                    sm: `url(${bg})`,
-                    md: `url(${bg3})`,
-                    lg: `url(${bg3})`,
-                    xl: `url(${bg3})`
+                    md: statusMode === "dark" ? `url(${bg3})` : `url(${LightImage})`,
                 },
                 backgroundPosition: "center",
                 backgroundSize: "cover",
@@ -80,7 +89,7 @@ const Home = () => {
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                
+
                 <motion.div
                     ref={ref}
                     initial={{ opacity: 0, y: 100 }}
@@ -103,35 +112,31 @@ const Home = () => {
 
                     <Box className="particle" />
                     <Box sx={{ display: "flex", justifyContent: "center", mt: 10 }}>
-                        <Typography variant="h4" sx={{ mx: 1 }}
-                            color="tomato">
-                            {"{{"}
-                        </Typography>
 
-                        <Typography variant="h4" ref={NameAn} color="#A8E6CE" sx={{
-                            textShadow: "2px 2px 4px #81B29A , 2px 2px 4px #81B29A"
+
+                        <Typography variant="h4" ref={NameAn} color={color} sx={{
+                            fontSize: {
+                                xs: "3rem",
+                                md: "5rem"
+                            }
                         }}
                         >
-                            {"{{علیرضا سپه وند}}"}
+                            {"{{ علیرضا سپه وند }}"}
                         </Typography>
 
-                        <Typography variant="h4" sx={{ mx: 1 }}
-                            color="tomato">
-                            {"}}"}
-                        </Typography>
                     </Box>
 
                     <Box component="div" sx={{
                         display: "flex", justifyContent: "center", mt: 3
                     }}>
-                        <Typography variant="h4" color="whitesmoke" ref={BioAn} sx={{
+                        <Typography variant="h4" color={color} ref={BioAn} sx={{
                             textDecoration: "underline whitesmoke", mx: 1
 
                         }}>
                             #
                         </Typography>
                         <TextTransition springConfig={presets.wobbly} >
-                            <Typography variant="h4" color="whitesmoke" sx={{
+                            <Typography variant="h4" color={color} sx={{
                                 textDecoration: "underline whitesmoke"
                             }}>
                                 {string[index % string.length]}

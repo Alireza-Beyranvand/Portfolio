@@ -1,20 +1,21 @@
-import { Drawer } from "@mui/material";
+import { Drawer, Box } from "@mui/material";
 
 import SidebarContent from "../Sidebar/SideBarContent";
 
 import { useContext } from "react";
 import MainContext from "../../context/index";
+import ModeActionButton from "../ModeActionButton";
 
 const DrawerSidebar = () => {
 
 
-    const { drawerOpen, setDrawerOpen} = useContext(MainContext)
+    const { drawerOpen, setDrawerOpen } = useContext(MainContext)
 
 
     return (
         <Drawer
             dir="rtl"
-            open={drawerOpen} 
+            open={drawerOpen}
             variant="temporary"
             onClose={() => setDrawerOpen(false)}
             sx={{
@@ -30,6 +31,14 @@ const DrawerSidebar = () => {
             }}
 
         >
+            <Box component="div" sx={{ mb: {
+                xs : 6 ,
+                sm: 6 ,
+                md : 15
+            },
+                 display: "flex", justifyContent: "center" }}>
+                <ModeActionButton />
+            </Box>
             <SidebarContent />
         </Drawer>
     )

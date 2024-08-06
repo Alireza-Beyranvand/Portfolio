@@ -28,7 +28,7 @@ const Resume = () => {
     return (
         <>
             <HelmetOption title={"رزومه من"} />
-            <SlideOption dir="down" start={loading} delay="500">
+            <SlideOption dir="left" start={loading} delay="300">
                 <Divider textAlign="center" sx={{
                     "&::before, &::after": {
                         borderColor: "secondary.main"
@@ -36,17 +36,17 @@ const Resume = () => {
                     mt: 3,
                 }}>
                     <Chip label={<Typography variant="body1"
-                        color="whitesmoke" >رزومه ی من</Typography>}
+                         color="text.primary" >رزومه ی من</Typography>}
                         icon={< Description />} color="secondary" sx={{ p: 3, px: 15 }} />
                 </Divider>
             </SlideOption>
 
             <Grid container sx={{ mt: 10 }}>
                 <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <SlideOption dir="up" start={loading} delay="500">
+                    <SlideOption dir="down" start={loading} delay="500">
                         <Divider textAlign="center">
                             <Chip label={<Typography variant="body1"
-                                color="black" >تجربیات من</Typography>}
+                                 color="text.primary">تجربیات من</Typography>}
                                 icon={< SettingsRounded />} color="warning" sx={{ p: 3 }} />
                         </Divider>
                     </SlideOption>
@@ -60,16 +60,16 @@ const Resume = () => {
                                 key={index}
                                 icon={dx.icon}
                                 index={index}
-                                delay="100" />
+                                delay="90" />
                         </Box>
                     )}
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} lg={6} xl={6} >
-                    <SlideOption dir="down" start={loading} delay="500">
+                    <SlideOption dir="up" start={loading} delay="500">
                         <Divider textAlign="center">
                             <Chip label={<Typography variant="body1"
-                                color="black" >تحصیلات من</Typography>}
-                                icon={< SchoolRounded />} color="info" sx={{ p: 3 }} />
+                                 color="text.primary" >تحصیلات من</Typography>}
+                                icon={< SchoolRounded />} color="error" sx={{ p: 3 }} />
                         </Divider>
                     </SlideOption>
 
@@ -82,12 +82,12 @@ const Resume = () => {
                                 school={de.school}
                                 index={index}
                                 icon={de.icon}
-                                delay="200" />
+                                delay="90" />
                         </Box>)}
 
                 </Grid>
             </Grid>
-            <SlideOption dir="up" start={loading} delay="700">
+            <SlideOption dir="right" start={loading} delay="300">
                 <Box component="div" sx={{ mt: 4 }}>
                     <Divider textAlign="center" sx={{
                         "&::before , &&::after": {
@@ -105,7 +105,7 @@ const Resume = () => {
             <Grid>
                 <Grid container sx={{ display: "flex", justifyContent: "space-around", mt: 9 }} >
                     {devDocuments && devDocuments.map((dD, index) => (
-                        <SlideOption dir="up" start={loading} delay={`${index + 1}100`}>
+                        <SlideOption dir="up" start={loading} delay={`${index + 3}90`}>
                             <Grid item xs={7}
                                 sm={4}
                                 md={4}

@@ -7,28 +7,51 @@ import { SideBar } from "../components/Sidebar/index"
 import MainLayout from '../layout/MainLayout';
 import MainContext from "../context/index";
 import { DrawerActionButton } from "../components/Drawer";
-import { Home, About, Resume } from "../pages/index";
+import { Home, About, Resume, Comments, Contact } from "../pages/index";
 import WorkSamples from "../pages/components/WorkSamples";
 
 const AppContainer = () => {
 
-
+  // initilize useTehem 
   const theme = useTheme();
   const showSidebarinMd = useMediaQuery(theme.breakpoints.up("md"))
 
+  // desired by the user theme
+  const favoriteUserTheme = useMediaQuery('(prefers-color-scheme : dark)')
+
+
+  // states
+  const [Numberpages, setNumberPage] = useState(0);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [mode, setMode] = useState("dark");
+
+
+
+  // handle change number page
+  const handlePageNumber = (event, newValue) => {
+    setNumberPage(newValue)
+  };
+
+
+  // handle theme mode
+  const handleThemeMode = () => {
+    setMode((preMode) => preMode === "dark" ? "light" : "dark")
+  };
+
+
+  // responsive sidebar
   useEffect(() => {
     if (showSidebarinMd) {
       setDrawerOpen(false);
     }
-  }, [showSidebarinMd])
+
+  }, [showSidebarinMd]);
 
 
-  const [Numberpages, setNumberPage] = useState(0)
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const handlePageNumber = (event, newValue) => {
-    setNumberPage(newValue)
-  }
+  // change theme by theme user
+  useEffect(() => {
+    setMode(favoriteUserTheme ? "dark" : "light")
+  }, [favoriteUserTheme])
 
 
   return (
@@ -37,10 +60,12 @@ const AppContainer = () => {
         handlePageNumber,
         Numberpages,
         drawerOpen,
-        setDrawerOpen
+        setDrawerOpen,
+        handleThemeMode,
+        statusMode: mode
       }}>
 
-        <MainLayout>
+        <MainLayout mode={mode}>
           <SideBarContainer>
             <SideBar />
           </SideBarContainer>
@@ -56,17 +81,10 @@ const AppContainer = () => {
               <Resume />
             </Pages>
             <Pages Numberpages={Numberpages} index={3}>
-              <WorkSamples/>
+              <WorkSamples />
             </Pages>
             <Pages Numberpages={Numberpages} index={4}>
-              <Typography variant="h5" sx={{ textAlign: "center" }}>
-                نظرات
-              </Typography>
-            </Pages>
-            <Pages Numberpages={Numberpages} index={5}>
-              <Typography variant="h5" sx={{ textAlign: "center" }}>
-                ارتباط با من
-              </Typography>
+              <Contact />
             </Pages>
           </PageContainer>
         </MainLayout>

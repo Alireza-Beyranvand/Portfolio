@@ -11,6 +11,16 @@ import ICDL from "../assets/documentImage/39640191.jpg";
 import Fixing from "../assets/documentImage/39640192.jpg";
 
 
+
+// img for call me
+
+import LinkedIn from "../assets/LinkedIn_logo_initials.png.webp";
+import GitHub from "../assets/Octicons-mark-github.svg.png";
+import Email from "../assets/gmailpng.parspng.com-6.png";
+import Insatagram from "../assets/Instagram_logo_2022.svg.webp";
+import Telegram from "../assets/Telegram_logo.svg.webp";
+
+
 // work info
 
 export const devWorkInfo = [
@@ -80,7 +90,7 @@ export const devDocuments = [
     },
     {
         DocumentName: "مدرک تعمیرات کامپیوتر",
-        level: "درجه 2" ,
+        level: "درجه 2",
         image: Fixing
     },
     {
@@ -89,3 +99,30 @@ export const devDocuments = [
         image: Fixing
     },
 ];
+
+
+
+export const devCallMe = [
+    {
+        name: "Email",
+        url: "AlirezaSepahvand69",
+        logo: Email
+    }, {
+        name: "LinkedIn",
+        url: "alireza-beyranvand",
+        logo: LinkedIn
+    }, {
+        name: "GitHub",
+        url: "Alireza-Beyranvand",
+        logo: GitHub
+    }, {
+        name: "Instagram",
+        url: "Alireza_.beyranvand._",
+        logo: Insatagram
+    },
+    {
+        name: "Telegram",
+        url: " @Alirezaspbs ",
+        logo: Telegram
+    },
+]
