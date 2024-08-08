@@ -1,13 +1,13 @@
 
 import { Box, Fab } from "@mui/material"
 import { Menu } from "@mui/icons-material";
-
 import { useContext } from "react";
 import MainContext from "../../context/index";
 
+
 const DrawerActionButton = () => {
 
-    const { setDrawerOpen, drawerOpen } = useContext(MainContext)
+    const { setDrawerOpen} = useContext(MainContext)
 
     return (
         <Box position="absolute" sx={{

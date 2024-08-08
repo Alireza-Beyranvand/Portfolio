@@ -7,18 +7,17 @@ import {
 } from "@mui/icons-material";
 
 // image for (document)
-import ICDL from "../assets/documentImage/39640191.jpg";
-import Fixing from "../assets/documentImage/39640192.jpg";
-
+import { ICDL, Fixing } from '../assets/documentImage/index';
 
 
 // img for call me
-
-import LinkedIn from "../assets/LinkedIn_logo_initials.png.webp";
-import GitHub from "../assets/Octicons-mark-github.svg.png";
-import Email from "../assets/gmailpng.parspng.com-6.png";
-import Insatagram from "../assets/Instagram_logo_2022.svg.webp";
-import Telegram from "../assets/Telegram_logo.svg.webp";
+import {
+    LinkedIn,
+    GitHub,
+    Email,
+    Instagram,
+    Telegram
+} from "../assets/LogoSocialMedia"
 
 
 // work info
@@ -106,23 +105,28 @@ export const devCallMe = [
     {
         name: "Email",
         url: "AlirezaSepahvand69",
+        href: "mailto:AlirezaSepahvand69@gmail.com",
         logo: Email
     }, {
         name: "LinkedIn",
         url: "alireza-beyranvand",
+        href: "https://www.linkedin.com/in/alireza-beyranvand-8b842a2ba/",
         logo: LinkedIn
     }, {
         name: "GitHub",
         url: "Alireza-Beyranvand",
+        href: "https://github.com/Alireza-Beyranvand",
         logo: GitHub
     }, {
         name: "Instagram",
         url: "Alireza_.beyranvand._",
-        logo: Insatagram
+        href: "https://www.instagram.com/_.alireza_.beyranvand?igsh=MWFpMmVyM2dwbHoxdQ==",
+        logo: Instagram
     },
     {
         name: "Telegram",
         url: " @Alirezaspbs ",
+        href: "https://t.me/@Alirezaspbs",
         logo: Telegram
     },
 ]

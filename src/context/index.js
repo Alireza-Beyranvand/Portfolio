@@ -10,4 +10,5 @@ export default createContext({
     statusMode: "",
     loading: false,
     handleLoading: () => { },
+    closeComponent: () => { },
 });

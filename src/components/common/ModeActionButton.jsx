@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import MainContext from "../context/index";
+import MainContext from "../../context/index";
 import { Box, Fab } from "@mui/material";
 import { WbSunnyOutlined, NightlightOutlined } from "@mui/icons-material";
 

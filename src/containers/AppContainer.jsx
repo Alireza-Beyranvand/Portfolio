@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import PageContainer from "./PageContainer";
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Pages from '../pages/Pages';
-import SideBarContainer from "./SidebarContainer";
-import { SideBar } from "../components/Sidebar/index"
+import { useMediaQuery, useTheme } from "@mui/material";
+import {dataPages} from "../constants/dataPages";
 import MainLayout from '../layout/MainLayout';
-import MainContext from "../context/index";
+import Pages from '../pages/Pages';
+import { SideBar } from "../components/Sidebar/index"
+import SideBarContainer from "./SidebarContainer";
 import { DrawerActionButton } from "../components/Drawer";
-import { Home, About, Resume, Comments, Contact } from "../pages/index";
-import WorkSamples from "../pages/components/WorkSamples";
+import PageContainer from "./PageContainer";
+import MainContext from "../context/index";
+
+
+
 
 const AppContainer = () => {
 
@@ -54,6 +56,8 @@ const AppContainer = () => {
   }, [favoriteUserTheme])
 
 
+
+
   return (
     <>
       <MainContext.Provider value={{
@@ -71,21 +75,13 @@ const AppContainer = () => {
           </SideBarContainer>
           <DrawerActionButton />
           <PageContainer >
-            <Pages Numberpages={Numberpages} index={0}>
-              <Home />
-            </Pages>
-            <Pages Numberpages={Numberpages} index={1}>
-              <About />
-            </Pages>
-            <Pages Numberpages={Numberpages} index={2}>
-              <Resume />
-            </Pages>
-            <Pages Numberpages={Numberpages} index={3}>
-              <WorkSamples />
-            </Pages>
-            <Pages Numberpages={Numberpages} index={4}>
-              <Contact />
-            </Pages>
+            {dataPages &&
+              dataPages.map((page, index) =>
+              (<Pages key={index}
+                Numberpages={Numberpages}
+                index={index}>
+                {page.component}
+              </Pages>))}
           </PageContainer>
         </MainLayout>
       </MainContext.Provider>

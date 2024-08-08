@@ -1,14 +1,14 @@
 import { Drawer, Box } from "@mui/material";
-
-import SidebarContent from "../Sidebar/SideBarContent";
-
 import { useContext } from "react";
 import MainContext from "../../context/index";
-import ModeActionButton from "../ModeActionButton";
+import SidebarContent from "../Sidebar/SideBarContent";
+import ModeActionButton from "../common/ModeActionButton";
+
 
 const DrawerSidebar = () => {
 
 
+    // switch open or close drawer
     const { drawerOpen, setDrawerOpen } = useContext(MainContext)
 
 
@@ -31,12 +31,14 @@ const DrawerSidebar = () => {
             }}
 
         >
-            <Box component="div" sx={{ mb: {
-                xs : 6 ,
-                sm: 6 ,
-                md : 15
-            },
-                 display: "flex", justifyContent: "center" }}>
+            <Box component="div" sx={{
+                mb: {
+                    xs: 6,
+                    sm: 6,
+                    md: 15
+                },
+                display: "flex", justifyContent: "center"
+            }}>
                 <ModeActionButton />
             </Box>
             <SidebarContent />

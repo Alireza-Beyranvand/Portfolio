@@ -23,4 +23,5 @@ export const socialMedia = [
         icon: <LinkedIn />,
         url: "https://www.linkedin.com/in/alireza-beyranvand-8b842a2ba/"
     },
+    
 ];

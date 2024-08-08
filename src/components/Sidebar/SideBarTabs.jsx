@@ -2,13 +2,13 @@ import { useContext } from "react";
 import { Tabs, Tab } from "@mui/material";
 import { grey } from "@mui/material/colors";
 
-import { tabs } from "../data/tabsDataSidear";
+import { tabs } from "../../constants/tabsDataSidear";
 import MainContext from "../../context/index";
 import { useTheme } from "@mui/material/styles"
 
 const SideBarTabs = () => {
 
-    const { Numberpages, handlePageNumber, setDrawerOpen } = useContext(MainContext);
+    const { Numberpages, handlePageNumber, setDrawerOpen , statusMode} = useContext(MainContext);
 
     const tabProps = (index) => {
         return {
@@ -19,12 +19,6 @@ const SideBarTabs = () => {
 
     // data sheets for display
     const DataTabs = tabs();
-
-
-    // status theme mode
-
-    const theme = useTheme();
-    const statusMode = theme.palette.mode;
 
 
     return (

@@ -4,8 +4,8 @@ import { grey } from "@mui/material/colors";
 import { RandomReveal } from "react-random-reveal";
 import { alphaberPersian } from "../../constants/alphabetPersian";
 import { socialMedia } from "../../constants/socialMediaIcon";
-import ModeActionButton from "../ModeActionButton";
-import img from '../../assets/Screenshot_۲۰۲۴۰۷۲۲_۱۷۰۹۴۰_Gallery.jpg'
+import {Yellow} from "../../assets/MyImages";
+import ModeActionButton from "../common/ModeActionButton";
 
 
 const SideBarHeader = () => {
@@ -22,7 +22,7 @@ const SideBarHeader = () => {
                 <ModeActionButton />
             </Box>
             <Box sx={{ textAlign: 'center', justifyContent: "center", mt: 2 }}>
-                <Avatar src={img} variant="rounded"
+                <Avatar src={Yellow} variant="rounded"
                     sx={{
                         height: 270, width: 250, mx: "auto", mt: -.5, mb: 1.5,
                         display: {

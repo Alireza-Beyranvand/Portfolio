@@ -9,8 +9,7 @@ import {
 } from "@mui/lab";
 import { Typography } from "@mui/material";
 import { useState, useEffect } from "react";
-import SlideOption from "../../helpers/SlideOption";
-
+import SlideOption from "../../../helpers/SlideOption";
 
 
 const TimeLineResume = ({ option, time, school, index, icon, company, delay }) => {
@@ -24,7 +23,6 @@ const TimeLineResume = ({ option, time, school, index, icon, company, delay }) =
             setLoading(false)
         }
     }, [])
-
 
     return (
 

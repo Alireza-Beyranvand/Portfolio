@@ -1,43 +1,15 @@
-import { useState, useEffect } from "react";
+
 import { Card, CardContent, CardMedia, Typography, Box, CardActionArea, Divider, Chip, Tooltip } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import HelmetOption from "../../helpers/HelmetOption";
-import { CodeOutlined } from "@mui/icons-material";
-import { workSample } from "../../constants/workSample";
-import SlideOption from "../../helpers/SlideOption";
+import SlideOption from "../../../helpers/SlideOption";
+import { workSample } from "../../../constants/workSample";
+import { useContext } from "react";
+import MainContext from "../../../context/index";
 
-const WorkSamples = () => {
-
-
-
-    // state for animation
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true)
-        return () => {
-            setLoading(false)
-        }
-    }, [])
-
-
+const Samples = ({loading}) => {
     
     return (
         <>
-            <HelmetOption title="نمونه کار های من" />
-            <SlideOption start={loading} dir="down" delay="400" >
-                <Divider sx={{
-                    "&::before, &::after": {
-                        borderColor: "silver"
-                    },
-                    mt: 3
-                }}>
-                    <Chip label={<Typography variant="body1" color="text.primary">
-                        نمونه کار های من
-                    </Typography>} icon={<CodeOutlined />} sx={{ p: 3, px: 5 }} />
-                </Divider>
-            </SlideOption>
-
             {workSample && workSample.map((ws, index) => (
                 <SlideOption start={loading} dir="up" delay={`${index + 3}80`} >
                     <Tooltip title={
@@ -103,10 +75,10 @@ const WorkSamples = () => {
                         </Card>
                     </Tooltip>
                 </SlideOption>
-
             ))}
+
         </>
     )
 };
 
-export default WorkSamples;
+export default Samples;
